@@ -1,0 +1,11 @@
+function drupalphpheader_views_pre_view(&$view, &$display_id, &$args){
+  if ($view->name == 'TestScroll'){
+    $header = 'testscroll';
+    $options = array(
+      'empty' => 1,
+      'content' => $header, 
+      'label' => NULL,
+    );
+    $view->add_item('Page', 'header', 'views','area_text_custom', $options);
+  }
+}
